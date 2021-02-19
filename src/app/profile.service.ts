@@ -10,14 +10,21 @@ export class ProfileService {
 
   userProfile: UserProfile = {
     name: "John",
-    contact: "jotabraham@gmail.com",
+    contact: "helloworld@world.hello",
     bio: "hello there",
   }
 
   constructor() { }
 
-  getUserProfile = () => {
-
+  // if you call this, it will return everything above
+  // you are in the service tab
+  // this info needs to be injected to the profile ts
+  getUserProfile = ():UserProfile => {
+    return this.userProfile;
   }
 
+  // this method was created AFTER the formSubmission in edit.ts
+  setUserProfile = (updatedProfileObject: UserProfile):void => {
+    this.userProfile = updatedProfileObject;
+  }
 }

@@ -1,1 +1,15 @@
-<p>edit works!</p>
+<form #updateForm="ngForm" (submit)="formSubmission(updateForm)">
+   <p>Use the form below to update your profile.</p>
+   <label for="name">Name</label>
+   <input type="text" name="name" id="name" [ngModel]="myUserProfile.name">
+   <label for="contact">Contact</label>
+   <input type="text" name="contact" id="contact" [ngModel]="myUserProfile.contact">
+   <label for="bio">Bio</label>
+   <textarea name="bio" id="bio" cols="30" rows="10" [ngModel]="myUserProfile.bio"></textarea>
+   <button>Update</button>
+</form>
+<!-- now that we're working with a form we need to 
+   add the forms module to the app.module.ts imports.
+after making the form there should be a way to submit it
+in corresponding ts. create method with a log statement on the form
+then add a template reference within the form so that its accessible -->
